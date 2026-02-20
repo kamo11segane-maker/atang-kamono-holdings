@@ -32,7 +32,7 @@ body {
 }
 
 .navbar img {
-    height: 60px;
+    height: 55px;
 }
 
 .nav-links a {
@@ -53,7 +53,10 @@ body {
 .btn-primary:hover {
     background: #163366;
 }
-
+.card .btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+}
 /* ===== HERO ===== */
 .hero {
     padding: 80px 0;
@@ -80,44 +83,43 @@ body {
 /* ===== CARDS ===== */
 
 /* Grid Container */
-.cards-grid {
-    display: grid;
-    /* This creates as many columns as will fit, at least 250px wide each */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; /* Space between cards */
-    padding: 20px 0;
-}
-.card {
-    display: block;          /* Makes the whole card clickable area */
-    text-decoration: none;   /* Removes the underline */
-    color: inherit;          /* Keeps your original text color */
-    transition: transform 0.3s ease; /* Optional: adds a nice feel */
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-/* Hover Effects */
-.card {
-    display: block;          /* Makes the whole card clickable area */
-    text-decoration: none;   /* Removes the underline */
-    color: inherit;          /* Keeps your original text color */
-    transition: transform 0.3s ease; /* Optional: adds a nice feel */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Optional: makes card 'pop' on hover */
-    background-color: #f4f4f4;   /* Optional: slight color change */
-}
+.cards-grid,
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px 0;
+}
+
+/* Individual Card */
+.card {
+    display: flex;                 /* Enables flex layout */
+    flex-direction: column;        /* Stack content vertically */
+    justify-content: space-between;/* Push button toward bottom */
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Card Paragraph Spacing */
+.card p {
+    margin-bottom: 20px;
+}
+
+/* Button Spacing */
+.card .btn-primary {
+    align-self: flex-start; /* Keeps button aligned left */
+    margin-top: auto;       /* Pushes button to bottom */
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #f4f4f4;
 }
 /* ===== SECTION ===== */
 .section {
@@ -169,30 +171,65 @@ form button {
     border-radius: 4px;
     font-size: 16px;
 }
-/* ========================= */
-/* MOBILE RESPONSIVE DESIGN  */
-/* ========================= */
 
+/* ================================= */
+/* CLEAN MOBILE RESPONSIVE VERSION   */
+/* ================================= */
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
-    /* Navbar layout */
+    /* Container spacing */
+    .container {
+        width: 92%;
+    }
+
+    /* Navbar */
     .navbar .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .nav-links {
-        display: flex;
-        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
         width: 100%;
-        margin-top: 10px;
+        background: white;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .nav-links a {
-        margin: 10px 0;
+        margin: 12px 0;
     }
 
-    /* Hero Section */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Hero */
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -206,59 +243,15 @@ form button {
         font-size: 16px;
     }
 
-    /* Cards stack nicely */
+    /* Cards */
     .cards,
     .cards-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Section padding smaller */
+    /* Section spacing */
     .section {
         padding: 40px 0;
-    }
-
-}
-/* ========================= */
-/* HAMBURGER MENU STYLES */
-/* ========================= */
-
-.hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* Mobile Design */
-@media (max-width: 768px) {
-
-    .navbar .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav-links a {
-        margin: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
     }
 
 }
