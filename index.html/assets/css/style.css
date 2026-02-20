@@ -32,7 +32,7 @@ body {
 }
 
 .navbar img {
-    height: 300px;
+    height: 60px;
 }
 
 .nav-links a {
@@ -114,7 +114,11 @@ body {
     transform: translateY(-5px); /* Optional: makes card 'pop' on hover */
     background-color: #f4f4f4;   /* Optional: slight color change */
 }
-
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
 /* ===== SECTION ===== */
 .section {
     padding: 70px 0;
@@ -164,4 +168,97 @@ form button {
     border: none;
     border-radius: 4px;
     font-size: 16px;
+}
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN  */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar layout */
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    /* Cards stack nicely */
+    .cards,
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Section padding smaller */
+    .section {
+        padding: 40px 0;
+    }
+
+}
+/* ========================= */
+/* HAMBURGER MENU STYLES */
+/* ========================= */
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile Design */
+@media (max-width: 768px) {
+
+    .navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
 }

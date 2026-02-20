@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Us | Atang Kamono Holdings</title>
+    <title>Contact | Atang Kamono Holdings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -9,7 +10,13 @@
 <div class="navbar">
     <div class="container">
         <img src="assets/images/logo.png" alt="Logo">
-        <div class="nav-links">
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="industries.html">Industries</a>
@@ -21,32 +28,27 @@
 
 <section class="section">
     <div class="container">
-        <h2>About Atang Kamono Holdings</h2>
+        <h2>Request a Quote</h2>
+        <form action="https://formspree.io/f/xpqjjdqo" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="company" placeholder="Company Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
 
-        <p style="margin-bottom:20px;">
-            Atang Kamono Holdings is a strategic procurement and supply company dedicated to delivering reliable, compliant, and cost-effective sourcing solutions across both public and private sectors.
-        </p>
+            <select name="service">
+                <option>Office Supplies</option>
+                <option>Medical Supplies</option>
+                <option>Construction Materials</option>
+                <option>Cleaning Supplies</option>
+                <option>IT Equipment</option>
+            </select>
 
-        <h3>Our Mission</h3>
-        <p style="margin-bottom:20px;">
-            To provide efficient procurement services that ensure quality, affordability, and dependable delivery for every client.
-        </p>
+            <textarea name="message" rows="5" placeholder="Describe your request"></textarea>
 
-        <h3>Our Vision</h3>
-        <p style="margin-bottom:20px;">
-            To become a trusted procurement partner recognized for integrity, efficiency, and strategic sourcing excellence.
-        </p>
+            <input type="file" name="attachment">
 
-        <h3>Our Core Values</h3>
-        <ul style="margin-bottom:30px;">
-            <li>Integrity & Compliance</li>
-            <li>Efficiency & Reliability</li>
-            <li>Client-Centered Service</li>
-            <li>Strategic Partnerships</li>
-        </ul>
-
-        <a href="assets/documents/company-profile.pdf" class="btn-primary">Download Company Profile</a>
-
+            <button type="submit">Submit Request</button>
+        </form>
     </div>
 </section>
 
@@ -55,6 +57,11 @@
         <p>© 2019 Atang Kamono Holdings</p>
     </div>
 </footer>
-
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navLinks");
+    menu.classList.toggle("active");
+}
+</script>
 </body>
 </html>

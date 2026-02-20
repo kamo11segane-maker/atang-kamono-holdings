@@ -2,18 +2,26 @@
 <html>
 <head>
     <title>Contact | Atang Kamono Holdings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <div class="navbar">
     <div class="container">
-        <img src="assets/images/logo.png">
-        <div class="nav-links">
+        <img src="assets/images/logo.png" alt="Logo">
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+
+        <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="industries.html">Industries</a>
             <a href="about.html">About</a>
+            <a href="contact.html" class="btn-primary">Get a Quote</a>
         </div>
     </div>
 </div>
@@ -49,6 +57,11 @@
         <p>© 2019 Atang Kamono Holdings</p>
     </div>
 </footer>
-
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navLinks");
+    menu.classList.toggle("active");
+}
+</script>
 </body>
 </html>
