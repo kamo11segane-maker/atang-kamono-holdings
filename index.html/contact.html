@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact | Atang Kamono Holdings</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container">
+        <img src="assets/images/logo.png">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="industries.html">Industries</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <h2>Request a Quote</h2>
+        <form action="https://formspree.io/f/xpqjjdqo" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="company" placeholder="Company Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+
+            <select name="service">
+                <option>Office Supplies</option>
+                <option>Medical Supplies</option>
+                <option>Construction Materials</option>
+                <option>Cleaning Supplies</option>
+                <option>IT Equipment</option>
+            </select>
+
+            <textarea name="message" rows="5" placeholder="Describe your request"></textarea>
+
+            <input type="file" name="attachment">
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2019 Atang Kamono Holdings</p>
+    </div>
+</footer>
+
+</body>
+</html>
