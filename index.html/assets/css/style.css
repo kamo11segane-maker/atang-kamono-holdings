@@ -1,0 +1,167 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f8f9fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar img {
+    height: 300px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: #1a2b4c;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: #1a3d7c;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #163366;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 80px 0;
+    background: #eef2f7;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    color: #1a2b4c;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* ===== CARDS ===== */
+
+/* Grid Container */
+.cards-grid {
+    display: grid;
+    /* This creates as many columns as will fit, at least 250px wide each */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Space between cards */
+    padding: 20px 0;
+}
+.card {
+    display: block;          /* Makes the whole card clickable area */
+    text-decoration: none;   /* Removes the underline */
+    color: inherit;          /* Keeps your original text color */
+    transition: transform 0.3s ease; /* Optional: adds a nice feel */
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+/* Hover Effects */
+.card {
+    display: block;          /* Makes the whole card clickable area */
+    text-decoration: none;   /* Removes the underline */
+    color: inherit;          /* Keeps your original text color */
+    transition: transform 0.3s ease; /* Optional: adds a nice feel */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Optional: makes card 'pop' on hover */
+    background-color: #f4f4f4;   /* Optional: slight color change */
+}
+
+/* ===== SECTION ===== */
+.section {
+    padding: 70px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a2b4c;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1a2b4c;
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* ===== FORM ===== */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: #1a3d7c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
